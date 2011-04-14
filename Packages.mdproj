@@ -16,7 +16,7 @@
           </Builder>
         </Package>
         <Package name="Microsoft Windows Binaries">
-          <Builder targetFile="..\Catalogue-win32.zip" platform="Windows" configuration="Release|x86" ctype="BinariesZipPackageBuilder">
+          <Builder targetFile="..\Catalogue-res.zip" platform="Windows" configuration="Release|x86" ctype="BinariesZipPackageBuilder">
             <ChildEntries>
               <SolutionItemReference path="Catalogue\Catalogue.csproj" />
             </ChildEntries>

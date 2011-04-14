@@ -64,7 +64,7 @@ OTHER DEALINGS IN THE SOFTWARE.";
 </CataloguePreferences>
 ";
 		
-		public const string IconName = "catalogue.png";
+		public const string IconName = "catalogue.ico";
 		public const string ExportHTML = "ExportHTML.xslt";
 		public const string PreferencesFile = "Preferences.xml";
 

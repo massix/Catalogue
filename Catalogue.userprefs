@@ -1,18 +1,18 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Catalogue/CatalogueWindow.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Catalogue\AssemblyInfo.cs">
     <Files>
-      <File FileName="Catalogue/CatalogueEntry.cs" Line="1" Column="1" />
-      <File FileName="Catalogue/CataloguePreferences.cs" Line="74" Column="92" />
-      <File FileName="Catalogue/CataloguePreferencesParser.cs" Line="79" Column="9" />
-      <File FileName="Catalogue/CatalogueExporter.cs" Line="80" Column="11" />
-      <File FileName="Catalogue/CatalogueMain.cs" Line="1" Column="1" />
-      <File FileName="Catalogue/CatalogueParser.cs" Line="216" Column="4" />
-      <File FileName="Catalogue/CatalogueWindow.cs" Line="112" Column="6" />
-      <File FileName="Catalogue/ExportHTML.xslt" Line="112" Column="6" />
-      <File FileName="Catalogue/CatalogueUtils.cs" Line="65" Column="1" />
-      <File FileName="Catalogue/AssemblyInfo.cs" Line="16" Column="34" />
-      <File FileName="Catalogue/CataloguePreferencesException.cs" Line="1" Column="1" />
+      <File FileName="Catalogue\CatalogueEntry.cs" Line="36" Column="4" />
+      <File FileName="Catalogue\CataloguePreferences.cs" Line="62" Column="4" />
+      <File FileName="Catalogue\CataloguePreferencesParser.cs" Line="79" Column="9" />
+      <File FileName="Catalogue\CatalogueExporter.cs" Line="80" Column="11" />
+      <File FileName="Catalogue\CatalogueMain.cs" Line="34" Column="4" />
+      <File FileName="Catalogue\CatalogueParser.cs" Line="207" Column="55" />
+      <File FileName="Catalogue\CatalogueWindow.cs" Line="445" Column="1" />
+      <File FileName="Catalogue\ExportHTML.xslt" Line="112" Column="6" />
+      <File FileName="Catalogue\CatalogueUtils.cs" Line="24" Column="4" />
+      <File FileName="Catalogue\AssemblyInfo.cs" Line="21" Column="52" />
+      <File FileName="Catalogue\CataloguePreferencesException.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
