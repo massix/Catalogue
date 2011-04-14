@@ -104,6 +104,5 @@
       <DeployService-UseProjectRelativePath>true</DeployService-UseProjectRelativePath>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="README.txt" />
   </ItemGroup>
 </Project>

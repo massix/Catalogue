@@ -362,8 +362,16 @@ public partial class CatalogueWindow : Gtk.Window
 
 	protected virtual void AddLineButton (object sender, System.EventArgs e)
 	{
+		int page = 0;
+		TreeIter lastItem;
+		bool got = tModel.IterNthChild (out lastItem, tModel.IterNChildren () - 1);
+
+		if (got)
+			page = (int) tModel.GetValue (lastItem, (int) Columns.COL_PAGE);
+
 		TreeIter iter = tModel.AppendValues (CatalogueParser.GetInstance ().UpdateHighestID (),
-			"Test", 0, true);
+			"Test", page, true);
+
 		mainTreeView.ScrollToCell (tModel.GetPath (iter),
 			mainTreeView.GetColumn ((int) Columns.COL_TITLE),
 			true, .0F, .0F);
