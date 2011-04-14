@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="3.5" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ItemType>PackagingProject</ItemType>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E91312F4-C1B7-4853-B8B0-EBAFFC0C5A2A}</ProjectGuid>
+    <Packages>
+      <Packages>
+        <Package name="Linux Binaries">
+          <Builder targetFile="Catalogue-linux.tar.gz" platform="Linux" configuration="Debug|x86" ctype="BinariesZipPackageBuilder">
+            <ChildEntries>
+              <SolutionItemReference path="Catalogue\Catalogue.csproj" />
+            </ChildEntries>
+            <RootEntry path="Catalogue.sln" id=":root:" />
+          </Builder>
+        </Package>
+        <Package name="Microsoft Windows Binaries">
+          <Builder targetFile="..\Catalogue-win32.zip" platform="Windows" configuration="Release|x86" ctype="BinariesZipPackageBuilder">
+            <ChildEntries>
+              <SolutionItemReference path="Catalogue\Catalogue.csproj" />
+            </ChildEntries>
+            <RootEntry path="Catalogue.sln" id=":root:" />
+          </Builder>
+        </Package>
+        <Package name="Tarball">
+          <Builder TargetDirectory="Catalogue" DefaultConfiguration="Debug|x86" ctype="TarballDeployTarget">
+            <ChildEntries>
+              <SolutionItemReference path="Catalogue\Catalogue.csproj" />
+            </ChildEntries>
+            <RootEntry path="Catalogue.sln" id=":root:" />
+          </Builder>
+        </Package>
+      </Packages>
+    </Packages>
+  </PropertyGroup>
+</Project>
