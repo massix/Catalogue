@@ -98,7 +98,7 @@ namespace Catalogue
 			this.glangbox.AppendText (global::Mono.Unix.Catalog.GetString ("Francais"));
 			this.glangbox.AppendText (global::Mono.Unix.Catalog.GetString ("Espanol"));
 			this.glangbox.Name = "glangbox";
-			this.glangbox.Active = 2;
+			this.glangbox.Active = 0;
 			this.hbox1.Add (this.glangbox);
 			global::Gtk.Box.BoxChild w5 = ((global::Gtk.Box.BoxChild)(this.hbox1[this.glangbox]));
 			w5.Position = 1;
