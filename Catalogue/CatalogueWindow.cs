@@ -279,18 +279,23 @@ public partial class CatalogueWindow : Gtk.Window
 
 		FChooser.Run ();
 
-		if (open) {
-			tModel.Clear ();
-			LinkedList<CatalogueEntry> Entries = CatalogueParser.GetInstance ().OpenFile (FChooser.Filename);
-			foreach (CatalogueEntry entry in Entries) {
-				tModel.AppendValues (entry.ID, entry.Title, entry.PageNo, entry.Works);
-			}
+		if (open)
+			LoadFile (FChooser.Filename);
 
-			Title = "Catalogue - " + CatalogueParser.GetInstance ().OpenedDocumentName;
-			statusbar.Push ((uint) Context.DEFAULT_CONTEXT, "Opened file " + CatalogueParser.GetInstance ().OpenedDocumentPath);
-		}
 
 		FChooser.Destroy ();
+	}
+
+	public void LoadFile (string fileName)
+	{
+		tModel.Clear ();
+		LinkedList<CatalogueEntry> Entries = CatalogueParser.GetInstance ().OpenFile (fileName);
+		foreach (CatalogueEntry entry in Entries) {
+			tModel.AppendValues (entry.ID, entry.Title, entry.PageNo, entry.Works);
+		}
+
+		Title = "Catalogue - " + CatalogueParser.GetInstance ().OpenedDocumentName;
+		statusbar.Push ((uint) Context.DEFAULT_CONTEXT, "Opened file " + CatalogueParser.GetInstance ().OpenedDocumentPath);
 	}
 
 	protected virtual void SaveFileButton (object sender, System.EventArgs e)

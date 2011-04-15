@@ -34,7 +34,10 @@ namespace Catalogue
 		{
 			Application.Init ();
 			CatalogueWindow win = new CatalogueWindow ();
-			
+
+			if (args.Length > 0)
+				win.LoadFile (args[0]);
+
 			// Init CatalogueParser
 			CatalogueParser.GetInstance ();
 
