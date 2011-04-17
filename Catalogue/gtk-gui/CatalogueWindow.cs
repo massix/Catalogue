@@ -25,7 +25,23 @@ public partial class CatalogueWindow
 
 	private global::Gtk.Action preferencesAction;
 
+	private global::Gtk.Action FileAction;
+
+	private global::Gtk.Action ExitAction;
+
+	private global::Gtk.Action EditAction;
+
+	private global::Gtk.Action AddAction;
+
+	private global::Gtk.Action RemoveAction;
+
+	private global::Gtk.Action HelpAction;
+
+	private global::Gtk.Action AboutAction;
+
 	private global::Gtk.VBox vbox1;
+
+	private global::Gtk.MenuBar menubar;
 
 	private global::Gtk.Toolbar toolbar1;
 
@@ -68,6 +84,27 @@ public partial class CatalogueWindow
 		w1.Add (this.newAction, null);
 		this.preferencesAction = new global::Gtk.Action ("preferencesAction", null, null, "gtk-preferences");
 		w1.Add (this.preferencesAction, null);
+		this.FileAction = new global::Gtk.Action ("FileAction", global::Mono.Unix.Catalog.GetString ("File"), null, null);
+		this.FileAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("File");
+		w1.Add (this.FileAction, null);
+		this.ExitAction = new global::Gtk.Action ("ExitAction", global::Mono.Unix.Catalog.GetString ("Exit"), null, null);
+		this.ExitAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("Exit");
+		w1.Add (this.ExitAction, null);
+		this.EditAction = new global::Gtk.Action ("EditAction", global::Mono.Unix.Catalog.GetString ("Edit"), null, null);
+		this.EditAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("Edit");
+		w1.Add (this.EditAction, null);
+		this.AddAction = new global::Gtk.Action ("AddAction", global::Mono.Unix.Catalog.GetString ("Add"), null, null);
+		this.AddAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("Add");
+		w1.Add (this.AddAction, "<Control>a");
+		this.RemoveAction = new global::Gtk.Action ("RemoveAction", global::Mono.Unix.Catalog.GetString ("Remove"), null, null);
+		this.RemoveAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("Remove");
+		w1.Add (this.RemoveAction, "<Control>d");
+		this.HelpAction = new global::Gtk.Action ("HelpAction", global::Mono.Unix.Catalog.GetString ("Help"), null, null);
+		this.HelpAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("Help");
+		w1.Add (this.HelpAction, null);
+		this.AboutAction = new global::Gtk.Action ("AboutAction", global::Mono.Unix.Catalog.GetString ("About"), null, null);
+		this.AboutAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("About");
+		w1.Add (this.AboutAction, "<Control>h");
 		this.UIManager.InsertActionGroup (w1, 0);
 		this.AddAccelGroup (this.UIManager.AccelGroup);
 		this.Name = "CatalogueWindow";
@@ -78,15 +115,24 @@ public partial class CatalogueWindow
 		this.vbox1.Name = "vbox1";
 		this.vbox1.Spacing = 6;
 		// Container child vbox1.Gtk.Box+BoxChild
+		this.UIManager.AddUiFromString (@"<ui><menubar name='menubar'><menu name='FileAction' action='FileAction'><menuitem name='ExitAction' action='ExitAction'/></menu><menu name='EditAction' action='EditAction'><menuitem name='AddAction' action='AddAction'/><menuitem name='RemoveAction' action='RemoveAction'/></menu><menu name='HelpAction' action='HelpAction'><menuitem name='AboutAction' action='AboutAction'/></menu></menubar></ui>");
+		this.menubar = ((global::Gtk.MenuBar)(this.UIManager.GetWidget ("/menubar")));
+		this.menubar.Name = "menubar";
+		this.vbox1.Add (this.menubar);
+		global::Gtk.Box.BoxChild w2 = ((global::Gtk.Box.BoxChild)(this.vbox1[this.menubar]));
+		w2.Position = 0;
+		w2.Expand = false;
+		w2.Fill = false;
+		// Container child vbox1.Gtk.Box+BoxChild
 		this.UIManager.AddUiFromString (@"<ui><toolbar name='toolbar1'><toolitem name='newAction' action='newAction'/><toolitem name='openAction' action='openAction'/><toolitem name='saveAction' action='saveAction'/><toolitem name='saveAsAction' action='saveAsAction'/><toolitem name='addAction' action='addAction'/><toolitem name='removeAction' action='removeAction'/><toolitem name='convertAction' action='convertAction'/><separator/><toolitem name='preferencesAction' action='preferencesAction'/><toolitem name='aboutAction' action='aboutAction'/></toolbar></ui>");
 		this.toolbar1 = ((global::Gtk.Toolbar)(this.UIManager.GetWidget ("/toolbar1")));
 		this.toolbar1.Name = "toolbar1";
 		this.toolbar1.ShowArrow = false;
 		this.vbox1.Add (this.toolbar1);
-		global::Gtk.Box.BoxChild w2 = ((global::Gtk.Box.BoxChild)(this.vbox1[this.toolbar1]));
-		w2.Position = 0;
-		w2.Expand = false;
-		w2.Fill = false;
+		global::Gtk.Box.BoxChild w3 = ((global::Gtk.Box.BoxChild)(this.vbox1[this.toolbar1]));
+		w3.Position = 1;
+		w3.Expand = false;
+		w3.Fill = false;
 		// Container child vbox1.Gtk.Box+BoxChild
 		this.hbox1 = new global::Gtk.HBox ();
 		this.hbox1.Name = "hbox1";
@@ -99,39 +145,39 @@ public partial class CatalogueWindow
 		this.entry3.IsEditable = true;
 		this.entry3.InvisibleChar = '•';
 		this.hbox1.Add (this.entry3);
-		global::Gtk.Box.BoxChild w3 = ((global::Gtk.Box.BoxChild)(this.hbox1[this.entry3]));
-		w3.Position = 0;
+		global::Gtk.Box.BoxChild w4 = ((global::Gtk.Box.BoxChild)(this.hbox1[this.entry3]));
+		w4.Position = 0;
 		// Container child hbox1.Gtk.Box+BoxChild
 		this.SearchButton = new global::Gtk.Button ();
 		this.SearchButton.CanFocus = true;
 		this.SearchButton.Name = "SearchButton";
 		this.SearchButton.UseUnderline = true;
 		// Container child SearchButton.Gtk.Container+ContainerChild
-		global::Gtk.Alignment w4 = new global::Gtk.Alignment (0.5f, 0.5f, 0f, 0f);
+		global::Gtk.Alignment w5 = new global::Gtk.Alignment (0.5f, 0.5f, 0f, 0f);
 		// Container child GtkAlignment.Gtk.Container+ContainerChild
-		global::Gtk.HBox w5 = new global::Gtk.HBox ();
-		w5.Spacing = 2;
+		global::Gtk.HBox w6 = new global::Gtk.HBox ();
+		w6.Spacing = 2;
 		// Container child GtkHBox.Gtk.Container+ContainerChild
-		global::Gtk.Image w6 = new global::Gtk.Image ();
-		w6.Pixbuf = global::Stetic.IconLoader.LoadIcon (this, "gtk-find", global::Gtk.IconSize.Menu);
+		global::Gtk.Image w7 = new global::Gtk.Image ();
+		w7.Pixbuf = global::Stetic.IconLoader.LoadIcon (this, "gtk-find", global::Gtk.IconSize.Menu);
+		w6.Add (w7);
+		// Container child GtkHBox.Gtk.Container+ContainerChild
+		global::Gtk.Label w9 = new global::Gtk.Label ();
+		w9.LabelProp = global::Mono.Unix.Catalog.GetString ("_Find");
+		w9.UseUnderline = true;
+		w6.Add (w9);
 		w5.Add (w6);
-		// Container child GtkHBox.Gtk.Container+ContainerChild
-		global::Gtk.Label w8 = new global::Gtk.Label ();
-		w8.LabelProp = global::Mono.Unix.Catalog.GetString ("_Find");
-		w8.UseUnderline = true;
-		w5.Add (w8);
-		w4.Add (w5);
-		this.SearchButton.Add (w4);
+		this.SearchButton.Add (w5);
 		this.hbox1.Add (this.SearchButton);
-		global::Gtk.Box.BoxChild w12 = ((global::Gtk.Box.BoxChild)(this.hbox1[this.SearchButton]));
-		w12.Position = 1;
-		w12.Expand = false;
-		w12.Fill = false;
-		this.vbox1.Add (this.hbox1);
-		global::Gtk.Box.BoxChild w13 = ((global::Gtk.Box.BoxChild)(this.vbox1[this.hbox1]));
+		global::Gtk.Box.BoxChild w13 = ((global::Gtk.Box.BoxChild)(this.hbox1[this.SearchButton]));
 		w13.Position = 1;
 		w13.Expand = false;
 		w13.Fill = false;
+		this.vbox1.Add (this.hbox1);
+		global::Gtk.Box.BoxChild w14 = ((global::Gtk.Box.BoxChild)(this.vbox1[this.hbox1]));
+		w14.Position = 2;
+		w14.Expand = false;
+		w14.Fill = false;
 		// Container child vbox1.Gtk.Box+BoxChild
 		this.GtkScrolledWindow = new global::Gtk.ScrolledWindow ();
 		this.GtkScrolledWindow.Name = "GtkScrolledWindow";
@@ -145,23 +191,24 @@ public partial class CatalogueWindow
 		this.mainTreeView.SearchColumn = 1;
 		this.GtkScrolledWindow.Add (this.mainTreeView);
 		this.vbox1.Add (this.GtkScrolledWindow);
-		global::Gtk.Box.BoxChild w15 = ((global::Gtk.Box.BoxChild)(this.vbox1[this.GtkScrolledWindow]));
-		w15.Position = 2;
+		global::Gtk.Box.BoxChild w16 = ((global::Gtk.Box.BoxChild)(this.vbox1[this.GtkScrolledWindow]));
+		w16.Position = 3;
 		// Container child vbox1.Gtk.Box+BoxChild
 		this.statusbar = new global::Gtk.Statusbar ();
 		this.statusbar.Name = "statusbar";
 		this.statusbar.Spacing = 6;
 		this.vbox1.Add (this.statusbar);
-		global::Gtk.Box.BoxChild w16 = ((global::Gtk.Box.BoxChild)(this.vbox1[this.statusbar]));
-		w16.Position = 3;
-		w16.Expand = false;
-		w16.Fill = false;
+		global::Gtk.Box.BoxChild w17 = ((global::Gtk.Box.BoxChild)(this.vbox1[this.statusbar]));
+		w17.Position = 4;
+		w17.Expand = false;
+		w17.Fill = false;
 		this.Add (this.vbox1);
 		if ((this.Child != null)) {
 			this.Child.ShowAll ();
 		}
 		this.DefaultWidth = 648;
 		this.DefaultHeight = 501;
+		this.menubar.Hide ();
 		this.Show ();
 		this.DeleteEvent += new global::Gtk.DeleteEventHandler (this.OnDeleteEvent);
 		this.openAction.Activated += new global::System.EventHandler (this.OpenFileButton);
@@ -173,6 +220,10 @@ public partial class CatalogueWindow
 		this.convertAction.Activated += new global::System.EventHandler (this.ExportAction);
 		this.newAction.Activated += new global::System.EventHandler (this.NewActivate);
 		this.preferencesAction.Activated += new global::System.EventHandler (this.PreferencesActivated);
+		this.ExitAction.Activated += new global::System.EventHandler (this.ExitActivate);
+		this.AddAction.Activated += new global::System.EventHandler (this.AddLineButton);
+		this.RemoveAction.Activated += new global::System.EventHandler (this.DeleteLineButton);
+		this.AboutAction.Activated += new global::System.EventHandler (this.AboutButton);
 		this.SearchButton.Activated += new global::System.EventHandler (this.FindButtonActivate);
 		this.SearchButton.Clicked += new global::System.EventHandler (this.FindButtonActivate);
 	}

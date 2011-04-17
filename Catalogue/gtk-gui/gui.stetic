@@ -71,6 +71,48 @@
         <property name="StockId">gtk-preferences</property>
         <signal name="Activated" handler="PreferencesActivated" />
       </action>
+      <action id="FileAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">File</property>
+        <property name="ShortLabel" translatable="yes">File</property>
+      </action>
+      <action id="ExitAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Exit</property>
+        <property name="ShortLabel" translatable="yes">Exit</property>
+        <signal name="Activated" handler="ExitActivate" />
+      </action>
+      <action id="EditAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Edit</property>
+        <property name="ShortLabel" translatable="yes">Edit</property>
+      </action>
+      <action id="AddAction">
+        <property name="Type">Action</property>
+        <property name="Accelerator">&lt;Control&gt;a</property>
+        <property name="Label" translatable="yes">Add</property>
+        <property name="ShortLabel" translatable="yes">Add</property>
+        <signal name="Activated" handler="AddLineButton" />
+      </action>
+      <action id="RemoveAction">
+        <property name="Type">Action</property>
+        <property name="Accelerator">&lt;Control&gt;d</property>
+        <property name="Label" translatable="yes">Remove</property>
+        <property name="ShortLabel" translatable="yes">Remove</property>
+        <signal name="Activated" handler="DeleteLineButton" />
+      </action>
+      <action id="HelpAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Help</property>
+        <property name="ShortLabel" translatable="yes">Help</property>
+      </action>
+      <action id="AboutAction">
+        <property name="Type">Action</property>
+        <property name="Accelerator">&lt;Control&gt;h</property>
+        <property name="Label" translatable="yes">About</property>
+        <property name="ShortLabel" translatable="yes">About</property>
+        <signal name="Activated" handler="AboutButton" />
+      </action>
     </action-group>
     <property name="MemberName" />
     <property name="Title" translatable="yes">Catalogue</property>
@@ -80,6 +122,30 @@
       <widget class="Gtk.VBox" id="vbox1">
         <property name="MemberName" />
         <property name="Spacing">6</property>
+        <child>
+          <widget class="Gtk.MenuBar" id="menubar">
+            <property name="MemberName" />
+            <property name="Visible">False</property>
+            <node name="menubar" type="Menubar">
+              <node type="Menu" action="FileAction">
+                <node type="Menuitem" action="ExitAction" />
+              </node>
+              <node type="Menu" action="EditAction">
+                <node type="Menuitem" action="AddAction" />
+                <node type="Menuitem" action="RemoveAction" />
+              </node>
+              <node type="Menu" action="HelpAction">
+                <node type="Menuitem" action="AboutAction" />
+              </node>
+            </node>
+          </widget>
+          <packing>
+            <property name="Position">0</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
         <child>
           <widget class="Gtk.Toolbar" id="toolbar1">
             <property name="MemberName" />
@@ -98,7 +164,7 @@
             </node>
           </widget>
           <packing>
-            <property name="Position">0</property>
+            <property name="Position">1</property>
             <property name="AutoSize">False</property>
             <property name="Expand">False</property>
             <property name="Fill">False</property>
@@ -141,7 +207,7 @@
             </child>
           </widget>
           <packing>
-            <property name="Position">1</property>
+            <property name="Position">2</property>
             <property name="AutoSize">True</property>
             <property name="Expand">False</property>
             <property name="Fill">False</property>
@@ -163,7 +229,7 @@
             </child>
           </widget>
           <packing>
-            <property name="Position">2</property>
+            <property name="Position">3</property>
             <property name="AutoSize">True</property>
           </packing>
         </child>
@@ -173,7 +239,7 @@
             <property name="Spacing">6</property>
           </widget>
           <packing>
-            <property name="Position">3</property>
+            <property name="Position">4</property>
             <property name="AutoSize">True</property>
             <property name="Expand">False</property>
             <property name="Fill">False</property>

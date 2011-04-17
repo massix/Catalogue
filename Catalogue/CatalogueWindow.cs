@@ -533,4 +533,8 @@ public partial class CatalogueWindow : Gtk.Window
 			errDiag.Destroy ();
 		}
 	}
+
+	protected virtual void ExitActivate (object sender, System.EventArgs e)
+	{
+	}
 }
