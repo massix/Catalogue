@@ -394,7 +394,6 @@ public partial class CatalogueWindow : Gtk.Window
 
 	protected virtual void AboutButton (object sender, System.EventArgs e)
 	{
-		Console.WriteLine (System.IO.Path.Combine (AppDomain.CurrentDomain.BaseDirectory, "catalogue.svg"));
 		AboutDialog AbDialog = new AboutDialog ()
 		{
 			Icon = new Gdk.Pixbuf (Utils.IconPath ()),
