@@ -401,7 +401,7 @@ public partial class CatalogueWindow : Gtk.Window
 			Version = Utils.GetVersion (false),
 			Copyright = "Copyright (C) 2011 - Massimo Gengarelli <gengarel@cs.unibo.it>",
 			License = Utils.LICENSE,
-			Website = "http://git.casafamelica.info/Catalogue.git"
+			Website = "http://github.com/massix/Catalogue"
 		};
 
 		AbDialog.Authors = new string[]
