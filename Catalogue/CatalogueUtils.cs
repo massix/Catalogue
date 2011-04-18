@@ -25,6 +25,7 @@
 
 using System;
 using System.IO;
+using System.Diagnostics;
 
 namespace Catalogue
 {
@@ -104,6 +105,12 @@ OTHER DEALINGS IN THE SOFTWARE.";
 
 		private Utils ()
 		{
+		}
+
+		[Conditional("DEBUG")]
+		public static void PrintDebug (string Tag, string Message)
+		{
+			Console.WriteLine ("[{0}] {1}", Tag, Message);
 		}
 	}
 }

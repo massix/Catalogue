@@ -182,7 +182,7 @@ public partial class CatalogueWindow : Gtk.Window
 			}
 			catch (Exception e) {
 				newPageNum = 0;
-				System.Console.WriteLine (e.Message);
+				Utils.PrintDebug("UNMANAGED EXCEPTION", e.Message);
 			}
 
 			tModel.GetIterFromString (out iter, args.Path);
@@ -267,7 +267,6 @@ public partial class CatalogueWindow : Gtk.Window
 		FChooser.Response += delegate (object o, ResponseArgs args) {
 			switch (args.ResponseId) {
 			case ResponseType.Accept:
-				System.Console.WriteLine ("Selected: " + FChooser.Filename);
 				open = true;
 				break;
 			case ResponseType.Cancel:

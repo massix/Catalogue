@@ -59,7 +59,7 @@ namespace Catalogue
 			switch (Type) {
 			case ExportType.TO_PDF:
 			case ExportType.TO_ODT:
-				Console.WriteLine ("Not Implemented yet");
+				Utils.PrintDebug("NOT IMPLEMENTED YET", "ExportType not implemented yet");
 				break;
 			case ExportType.TO_HTML:
 				XmlDocument ToExport = Parser.GetDocument ();

@@ -182,7 +182,7 @@ namespace Catalogue
 			try {
 				reader = new StreamReader (filename);
 			} catch (Exception e) {
-				Console.WriteLine ("Exception in CatalogueParser: " + e.Message);
+				Utils.PrintDebug("UNMANAGED EXCEPTION", e.Message);
 				return null;
 			}
 			
@@ -214,7 +214,7 @@ namespace Catalogue
 				Locked = true;
 			}
 			catch (XmlException e) {
-				Console.WriteLine ("Exception while reading file: " + e.Message);		
+				Utils.PrintDebug("UNMANAGED EXCEPTION", e.Message);
 			}
 			
 			reader.Close ();

@@ -1,18 +1,17 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Catalogue\AssemblyInfo.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Catalogue\CatalogueUtils.cs">
     <Files>
       <File FileName="Catalogue\CatalogueEntry.cs" Line="38" Column="21" />
       <File FileName="Catalogue\CataloguePreferences.cs" Line="62" Column="4" />
       <File FileName="Catalogue\CataloguePreferencesParser.cs" Line="79" Column="9" />
       <File FileName="Catalogue\CatalogueExporter.cs" Line="80" Column="11" />
-      <File FileName="Catalogue\CatalogueMain.cs" Line="28" Column="1" />
-      <File FileName="Catalogue\CatalogueParser.cs" Line="207" Column="55" />
-      <File FileName="Catalogue\CatalogueWindow.cs" Line="538" Column="3" />
-      <File FileName="Catalogue\ExportHTML.xslt" Line="112" Column="6" />
-      <File FileName="Catalogue\CatalogueUtils.cs" Line="71" Column="58" />
-      <File FileName="Catalogue\AssemblyInfo.cs" Line="29" Column="14" />
-      <File FileName="Catalogue\CataloguePreferencesException.cs" Line="1" Column="1" />
+      <File FileName="Catalogue\CatalogueMain.cs" Line="37" Column="1" />
+      <File FileName="Catalogue\CatalogueParser.cs" Line="206" Column="22" />
+      <File FileName="Catalogue\CatalogueWindow.cs" Line="404" Column="49" />
+      <File FileName="Catalogue\CatalogueUtils.cs" Line="113" Column="50" />
+      <File FileName="Catalogue\AssemblyInfo.cs" Line="41" Column="34" />
+      <File FileName="Catalogue\CataloguePreferencesException.cs" Line="27" Column="22" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
