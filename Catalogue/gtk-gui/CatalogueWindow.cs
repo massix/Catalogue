@@ -81,8 +81,7 @@ public partial class CatalogueWindow
 		w1.Add (this.saveAsAction, null);
 		this.disconnectAction = new global::Gtk.Action ("disconnectAction", null, null, "gtk-disconnect");
 		w1.Add (this.disconnectAction, null);
-		this.convertAction = new global::Gtk.Action ("convertAction", global::Mono.Unix.Catalog.GetString ("_Convert to HTML"), null, "gtk-convert");
-		this.convertAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("_Convert to HTML");
+		this.convertAction = new global::Gtk.Action ("convertAction", null, null, "gtk-convert");
 		w1.Add (this.convertAction, null);
 		this.newAction = new global::Gtk.Action ("newAction", null, null, "gtk-new");
 		w1.Add (this.newAction, null);

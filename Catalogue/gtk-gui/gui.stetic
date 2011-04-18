@@ -54,8 +54,7 @@
       </action>
       <action id="convertAction">
         <property name="Type">Action</property>
-        <property name="Label" translatable="yes">_Convert to HTML</property>
-        <property name="ShortLabel" translatable="yes">_Convert to HTML</property>
+        <property name="Label" translatable="yes" />
         <property name="StockId">gtk-convert</property>
         <signal name="Activated" handler="ExportAction" />
       </action>
