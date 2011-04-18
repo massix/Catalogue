@@ -496,6 +496,7 @@ public partial class CatalogueWindow : Gtk.Window
 			errDiag.ShowAll ();
 			errDiag.Run ();
 			errDiag.Destroy ();
+			Utils.PrintDebug ("XSLT Exception", exc.Message);
 		}
 	}
 

@@ -20,7 +20,6 @@
 				<style type="text/css">
 					body {
 						margin: 0;
-						font-size: 0.8em;
 						background-color: #ccc;
 						font-family: Arial, Liberation Sans, sans-serif;
 					}
@@ -42,7 +41,15 @@
 					}
 	
 					thead {
-						border-bottom: 2px solid black;
+						border: 3px solid #98bf21;
+						background-color: #A7C942;
+						font-size: 1.1em;
+						text-align: left;
+						padding-top: 5px;
+						padding-bottom: 4px;
+						text-align: left;
+						color: #ffffff;
+						font-family: Arial, Verdana, Bitstream Vera Sans, sans-serif;
 					}
 		
 					div#SummaryContainer {
@@ -55,12 +62,12 @@
 					div#TableContainer {
 						padding: 15px;
 					}
-		
-					.FilmEntry:hover {
-						background-color: #ccc;
+
+					.FilmEntryGray {
+						background-color: #EAF2D3;
 						color: black;
 					}
-					
+
 					h1 {
 						text-align: center;
 						font-size: 4em;
@@ -105,8 +112,10 @@
 					}
 					
 					table, th, td {
-						/*border: 1px solid black;*/
+						border: 1px solid #98bf21;
+						padding: 3px 7px 2px 7px;
 					}
+
 				</style>
 				<title>
 					CatalogueExport
@@ -145,8 +154,16 @@
 							<tbody>
 								<xsl:for-each select="//CatalogueEntry">
 									<xsl:sort select="."/>
-									<tr class="FilmEntry">
-										<td><xsl:value-of select="@ID"/></td>
+									<tr>
+										<xsl:choose>
+											<xsl:when test="position() mod 2 = 1">
+												<xsl:attribute name="class">FilmEntry</xsl:attribute>
+											</xsl:when>
+											<xsl:otherwise>
+												<xsl:attribute name="class">FilmEntryGray</xsl:attribute>
+											</xsl:otherwise>
+										</xsl:choose>
+										<td><xsl:value-of select="position()"/></td>
 										<td><xsl:value-of select="."/></td>
 										<xsl:if test="$imdb_it = 'True'">
 											<td>
@@ -182,7 +199,16 @@
 											</td>
 										</xsl:if>
 										<td><xsl:value-of select="@PageNo"/></td>
-										<td><xsl:value-of select="@Works"/></td>
+										<td>
+											<xsl:choose>
+												<xsl:when test="@Works = 'True'">
+													<b>OK</b>
+												</xsl:when>
+												<xsl:otherwise>
+													<i>Not working</i>
+												</xsl:otherwise>
+											</xsl:choose>
+										</td>
 									</tr>
 								</xsl:for-each>
 							</tbody>
