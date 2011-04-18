@@ -39,6 +39,10 @@ public partial class CatalogueWindow
 
 	private global::Gtk.Action AboutAction;
 
+	private global::Gtk.Action SaveAction;
+
+	private global::Gtk.Action OpenAction;
+
 	private global::Gtk.VBox vbox1;
 
 	private global::Gtk.MenuBar menubar;
@@ -105,6 +109,12 @@ public partial class CatalogueWindow
 		this.AboutAction = new global::Gtk.Action ("AboutAction", global::Mono.Unix.Catalog.GetString ("About"), null, null);
 		this.AboutAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("About");
 		w1.Add (this.AboutAction, "<Control>h");
+		this.SaveAction = new global::Gtk.Action ("SaveAction", global::Mono.Unix.Catalog.GetString ("Save"), null, null);
+		this.SaveAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("Save");
+		w1.Add (this.SaveAction, "<Control>s");
+		this.OpenAction = new global::Gtk.Action ("OpenAction", global::Mono.Unix.Catalog.GetString ("Open"), null, null);
+		this.OpenAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("Open");
+		w1.Add (this.OpenAction, "<Control>o");
 		this.UIManager.InsertActionGroup (w1, 0);
 		this.AddAccelGroup (this.UIManager.AccelGroup);
 		this.Name = "CatalogueWindow";
@@ -115,7 +125,7 @@ public partial class CatalogueWindow
 		this.vbox1.Name = "vbox1";
 		this.vbox1.Spacing = 6;
 		// Container child vbox1.Gtk.Box+BoxChild
-		this.UIManager.AddUiFromString (@"<ui><menubar name='menubar'><menu name='FileAction' action='FileAction'><menuitem name='ExitAction' action='ExitAction'/></menu><menu name='EditAction' action='EditAction'><menuitem name='AddAction' action='AddAction'/><menuitem name='RemoveAction' action='RemoveAction'/></menu><menu name='HelpAction' action='HelpAction'><menuitem name='AboutAction' action='AboutAction'/></menu></menubar></ui>");
+		this.UIManager.AddUiFromString (@"<ui><menubar name='menubar'><menu name='FileAction' action='FileAction'><menuitem name='SaveAction' action='SaveAction'/><menuitem name='OpenAction' action='OpenAction'/><menuitem name='ExitAction' action='ExitAction'/></menu><menu name='EditAction' action='EditAction'><menuitem name='AddAction' action='AddAction'/><menuitem name='RemoveAction' action='RemoveAction'/></menu><menu name='HelpAction' action='HelpAction'><menuitem name='AboutAction' action='AboutAction'/></menu></menubar></ui>");
 		this.menubar = ((global::Gtk.MenuBar)(this.UIManager.GetWidget ("/menubar")));
 		this.menubar.Name = "menubar";
 		this.vbox1.Add (this.menubar);
@@ -224,6 +234,8 @@ public partial class CatalogueWindow
 		this.AddAction.Activated += new global::System.EventHandler (this.AddLineButton);
 		this.RemoveAction.Activated += new global::System.EventHandler (this.DeleteLineButton);
 		this.AboutAction.Activated += new global::System.EventHandler (this.AboutButton);
+		this.SaveAction.Activated += new global::System.EventHandler (this.SaveFileButton);
+		this.OpenAction.Activated += new global::System.EventHandler (this.OpenFileButton);
 		this.SearchButton.Activated += new global::System.EventHandler (this.FindButtonActivate);
 		this.SearchButton.Clicked += new global::System.EventHandler (this.FindButtonActivate);
 	}

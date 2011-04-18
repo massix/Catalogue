@@ -113,6 +113,20 @@
         <property name="ShortLabel" translatable="yes">About</property>
         <signal name="Activated" handler="AboutButton" />
       </action>
+      <action id="SaveAction">
+        <property name="Type">Action</property>
+        <property name="Accelerator">&lt;Control&gt;s</property>
+        <property name="Label" translatable="yes">Save</property>
+        <property name="ShortLabel" translatable="yes">Save</property>
+        <signal name="Activated" handler="SaveFileButton" />
+      </action>
+      <action id="OpenAction">
+        <property name="Type">Action</property>
+        <property name="Accelerator">&lt;Control&gt;o</property>
+        <property name="Label" translatable="yes">Open</property>
+        <property name="ShortLabel" translatable="yes">Open</property>
+        <signal name="Activated" handler="OpenFileButton" />
+      </action>
     </action-group>
     <property name="MemberName" />
     <property name="Title" translatable="yes">Catalogue</property>
@@ -128,6 +142,8 @@
             <property name="Visible">False</property>
             <node name="menubar" type="Menubar">
               <node type="Menu" action="FileAction">
+                <node type="Menuitem" action="SaveAction" />
+                <node type="Menuitem" action="OpenAction" />
                 <node type="Menuitem" action="ExitAction" />
               </node>
               <node type="Menu" action="EditAction">
